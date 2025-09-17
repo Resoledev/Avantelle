@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVANTELLE - Authenticated Luxury Resale</title>
+    <meta name="description" content="Authenticated pre-owned Christian Louboutin shoes and luxury designer handbags from Chanel, Gucci & Hermès.">
+    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@300;400;500;600;700&family=Helvetica+Neue:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-grey: #F5F5F5;
+            --dark-grey: #1A1A1A;
+            --accent-gold: #C9A96E;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+            line-height: 1.4;
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation - Very minimal like LV */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 1000;
+            padding: 20px 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 32px;
+            filter: brightness(0);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 400;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.6;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 20px;
+            height: 1px;
+            background: var(--black);
+            transition: 0.3s;
+        }
+
+        /* Hero Section - Bold and Dramatic */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 0 40px;
+        }
+
+        .hero-title {
+            font-family: 'Futura', 'Helvetica Neue', sans-serif;
+            font-size: clamp(4rem, 8vw, 8rem);
+            font-weight: 300;
+            color: var(--black);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(14px, 2vw, 18px);
+            color: var(--black);
+            margin-bottom: 60px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            border: 1px solid var(--black);
+            opacity: 0;
+            animation: fadeInUp 1.2s ease 0.9s forwards;
+        }
+
+        .hero-cta:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Full-width Image Section */
+        .hero-image {
+            height: 70vh;
+            background: linear-gradient(45deg, var(--dark-grey) 0%, var(--black) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* Authentication Section - Clean and Minimal */
+        .authentication {
+            padding: 120px 40px;
+            background: var(--off-white);
+            text-align: center;
+        }
+
+        .auth-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Futura', sans-serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 300;
+            color: var(--black);
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 16px;
+            color: var(--black);
+            margin-bottom: 80px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .auth-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 80px;
+            margin-top: 80px;
+        }
+
+        .auth-card {
+            text-align: center;
+            padding: 0;
+        }
+
+        .auth-number {
+            font-family: 'Futura', sans-serif;
+            font-size: 60px;
+            font-weight: 300;
+            color: var(--black);
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        .auth-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--black);
+        }
+
+        .auth-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--black);
+            font-weight: 300;
+        }
+
+        /* Collections Section */
+        .collections {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .collections-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .collections-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            height: 80vh;
+        }
+
+        .collection-item {
+            position: relative;
+            background: var(--light-grey);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.6s ease;
+        }
+
+        .collection-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .collection-content {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: var(--white);
+        }
+
+        .collection-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .collection-subtitle {
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .collection-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+            opacity: 0.8;
+        }
+
+        /* Brand Story Section */
+        .story {
+            padding: 120px 40px;
+            background: var(--dark-grey);
+            color: var(--white);
+        }
+
+        .story-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .story-content h2 {
+            font-family: 'Futura', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .story-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .story-image {
+            height: 500px;
+            background: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 40px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-top: 60px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-info a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 40px;
+                gap: 30px;
+                transition: left 0.3s ease;
+                border-top: 1px solid rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero {
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 12vw, 4rem);
+                letter-spacing: -1px;
+            }
+
+            .hero-subtitle {
+                font-size: 12px;
+                letter-spacing: 2px;
+                margin-bottom: 40px;
+            }
+
+            .authentication,
+            .collections,
+            .story,
+            .contact {
+                padding: 80px 20px;
+            }
+
+            .collections-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .collection-item {
+                height: 300px;
+            }
+
+            .story-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .auth-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+        }
+
+        /* Luxury touches */
+        .luxury-divider {
+            width: 100px;
+            height: 1px;
+            background: var(--black);
+            margin: 0 auto;
+            opacity: 0.3;
+        }
+
+        .section-number {
+            font-family: 'Futura', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="logo">
+            <ul class="nav-menu">
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#authentication" class="nav-link">Authentication</a></li>
+                <li><a href="#story" class="nav-link">Story</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">AVANTELLE</h1>
+            <p class="hero-subtitle">Authenticated Luxury Resale</p>
+            <a href="#collections" class="hero-cta">Discover Collection</a>
+        </div>
+    </section>
+
+    <!-- Hero Image -->
+    <section class="hero-image">
+        <div>Coming Soon - Curated Luxury</div>
+    </section>
+
+    <!-- Authentication Section -->
+    <section class="authentication" id="authentication">
+        <div class="auth-container">
+            <div class="section-number reveal">01</div>
+            <h2 class="section-title reveal">Authentication</h2>
+            <p class="section-subtitle reveal">
+                Every piece undergoes rigorous authentication by certified luxury experts using advanced verification techniques and decades of industry experience.
+            </p>
+            <div class="luxury-divider reveal"></div>
+            
+            <div class="auth-grid">
+                <div class="auth-card reveal">
+                    <div class="auth-number">01</div>
+                    <h3 class="auth-title">Expert Verification</h3>
+                    <p class="auth-description">Certified specialists examine every detail using advanced authentication techniques and industry-leading expertise.</p>
+                </div>
+                
+                <div class="auth-card reveal">
+                    <div class="auth-number">02</div>
+                    <h3 class="auth-title">Documentation</h3>
+                    <p class="auth-description">Complete provenance records and detailed condition reports accompany every authenticated piece.</p>
+                </div>
+                
+                <div class="auth-card reveal">
+                    <div class="auth-number">03</div>
+                    <h3 class="auth-title">Guarantee</h3>
+                    <p class="auth-description">Lifetime authenticity guarantee backed by our comprehensive certification process and industry reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="collections-container">
+            <div class="collections-header">
+                <div class="section-number reveal">02</div>
+                <h2 class="section-title reveal">Collections</h2>
+                <div class="luxury-divider reveal"></div>
+            </div>
+            
+            <div class="collections-grid reveal">
+                <div class="collection-item">
+                    <div class="collection-overlay"></div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Christian Louboutin</h3>
+                        <p class="collection-subtitle">Iconic Red Soles</p>
+                    </div>
+                </div>
+                
+                <div class="collection-item">
+                    <div class="collection-overlay"></div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Chanel</h3>
+                        <p class="collection-subtitle">Timeless Elegance</p>
+                    </div>
+                </div>
+                
+                <div class="collection-item">
+                    <div class="collection-overlay"></div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Designer Luxury</h3>
+                        <p class="collection-subtitle">Gucci & Hermès</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="story-container">
+            <div class="story-content reveal">
+                <div class="section-number">03</div>
+                <h2>Our Story</h2>
+                <p>
+                    AVANTELLE represents the intersection of luxury heritage and contemporary curation. We are dedicated to preserving the artistry and craftsmanship of the world's most prestigious fashion houses.
+                </p>
+                <p>
+                    Each piece in our collection has been meticulously selected for its authenticity, condition, and enduring appeal. We serve discerning clients who appreciate the value of authenticated luxury and the stories these exceptional pieces carry.
+                </p>
+                <p>
+                    Based in the United Kingdom, we provide worldwide access to the finest pre-owned luxury goods, backed by uncompromising authentication standards and expert curation.
+                </p>
+            </div>
+            
+            <div class="story-image reveal">
+                <div>Luxury Curation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-number reveal">04</div>
+            <h2 class="section-title reveal">Contact</h2>
+            <div class="luxury-divider reveal"></div>
+            
+            <div class="contact-info reveal">
+                <p><strong>Email:</strong> <a href="mailto:sales@avantelle.co.uk">sales@avantelle.co.uk</a></p>
+                <p><strong>Website:</strong> <a href="https://avantelle.co.uk">avantelle.co.uk</a></p>
+            </div>
+            
+            <div style="margin-top: 60px;">
+                <a href="mailto:sales@avantelle.co.uk" class="hero-cta reveal">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Scroll reveal animation
+        const reveals = document.querySelectorAll('.reveal');
+        
+        function checkReveal() {
+            reveals.forEach(reveal => {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveal.getBoundingClientRect().top;
+                const revealPoint = 100;
+
+                if (revealTop < windowHeight - revealPoint) {
+                    reveal.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        checkReveal(); // Check on load
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.backdropFilter = 'blur(20px)';
+            } else {
+                navbar.style.background = 'var(--white)';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
