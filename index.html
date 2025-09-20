@@ -3,36 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVANTELLE - Authenticated Luxury Resale</title>
+    <title>AVANTELLE - Masters of Luxury Restoration</title>
+    <meta name="description" content="Curated luxury resale from the UK. Expert restoration of Christian Louboutin, Chanel, Hermès, and other prestigious brands. Each piece restored to perfection.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-black: #1a1614;
+            --soft-black: #2a2520;
+            --warm-white: #fdfbf7;
+            --cream: #f7f3ed;
+            --champagne: #f4f0e6;
+            --gold: #c9a876;
+            --gold-light: #e8d5b7;
+            --gold-dark: #8d6e45;
+            --grey-warm: #8b8680;
+            --grey-light: #f0ede7;
+            --shadow-soft: 0 20px 40px rgba(26, 22, 20, 0.08);
+            --shadow-elegant: 0 30px 60px rgba(26, 22, 20, 0.12);
+            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            --transition-quick: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-weight: 300;
-            color: #000;
-            background: #fff;
-            line-height: 1.4;
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
         }
 
-        /* Navigation */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            color: var(--primary-black);
+            background: var(--warm-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .sans {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ===== NAVIGATION ===== */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: #fff;
+            background: rgba(253, 251, 247, 0.92);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             z-index: 1000;
-            padding: 20px 40px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 30px 60px;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid transparent;
+        }
+
+        .navbar.scrolled {
+            padding: 20px 60px;
+            box-shadow: var(--shadow-soft);
+            border-bottom: 1px solid var(--gold-light);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -40,520 +92,618 @@
         }
 
         .logo {
-            height: 30px;
+            height: 36px;
+            transition: var(--transition-smooth);
+            filter: brightness(0.15) sepia(1) saturate(2) hue-rotate(15deg);
+        }
+
+        .navbar.scrolled .logo {
+            height: 32px;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 40px;
+            gap: 50px;
+            align-items: center;
         }
 
         .nav-link {
             text-decoration: none;
-            color: #000;
+            color: var(--primary-black);
             font-size: 11px;
-            letter-spacing: 2px;
+            font-weight: 400;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
+            position: relative;
+            transition: var(--transition-quick);
+            padding: 8px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            background: var(--gold);
+            transition: var(--transition-quick);
+            transform: translateX(-50%);
         }
 
         .nav-link:hover {
-            opacity: 0.6;
+            color: var(--gold-dark);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
+            gap: 6px;
+            padding: 10px;
         }
 
         .hamburger span {
-            width: 25px;
+            width: 28px;
             height: 2px;
-            background: #000;
-            transition: 0.3s;
+            background: var(--primary-black);
+            transition: var(--transition-quick);
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-
-        /* Hero */
+        /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0 20px;
+            position: relative;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="0.5" fill="%23c9a876" opacity="0.03"/><circle cx="80" cy="40" r="0.3" fill="%23c9a876" opacity="0.02"/><circle cx="40" cy="80" r="0.4" fill="%23c9a876" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
+            pointer-events: none;
         }
 
         .hero-content {
             max-width: 1000px;
             width: 100%;
+            position: relative;
+            z-index: 2;
+            animation: heroFadeIn 1.2s ease-out;
         }
 
         .hero-title {
-            font-size: clamp(3rem, 8vw, 8rem);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(4rem, 12vw, 9rem);
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 0.9;
+            color: var(--primary-black);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 3vw, 24px);
             font-weight: 300;
             letter-spacing: 6px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            line-height: 1;
+            color: var(--gold-dark);
+            opacity: 0.9;
         }
 
-        .hero-subtitle {
-            font-size: clamp(16px, 3.5vw, 20px);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            opacity: 0.8;
+        .hero-tagline {
+            font-size: clamp(16px, 2.5vw, 20px);
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+            color: var(--grey-warm);
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .shipping-notice {
-            font-size: clamp(14px, 2.5vw, 16px);
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            opacity: 0.8;
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
         }
 
         .hero-cta {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #000;
-            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 40px;
+            background: var(--primary-black);
+            color: var(--warm-white);
             text-decoration: none;
             font-size: 11px;
+            font-weight: 400;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin: 10px;
+            transition: var(--transition-smooth);
+            border: 2px solid var(--primary-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: var(--transition-smooth);
         }
 
         .hero-cta:hover {
-            background: #333;
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
         }
 
-        /* Categories */
-        .categories {
-            padding: 100px 40px;
-            background: #f8f8f8;
+        .hero-cta:hover::before {
+            left: 100%;
+        }
+
+        .hero-cta.secondary {
+            background: transparent;
+            color: var(--primary-black);
+            border: 2px solid var(--primary-black);
+        }
+
+        .hero-cta.secondary:hover {
+            background: var(--primary-black);
+            color: var(--warm-white);
+        }
+
+        /* ===== SECTIONS BASE ===== */
+        .section {
+            padding: 120px 60px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .section-title {
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 300;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
+            text-align: center;
+            color: var(--primary-black);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        /* ===== EXPERTISE SECTION ===== */
+        .expertise {
+            background: var(--champagne);
+            position: relative;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .expertise-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--primary-black);
+        }
+
+        .expertise-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: var(--soft-black);
+        }
+
+        .expertise-content .highlight {
+            color: var(--gold-dark);
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .expertise-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(201, 168, 118, 0.1), rgba(201, 168, 118, 0.05)),
+                        url('https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            box-shadow: var(--shadow-elegant);
+            position: relative;
+        }
+
+        .expertise-image::after {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(201, 168, 118, 0.3);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        /* ===== CATEGORIES SECTION ===== */
+        .categories {
+            background: var(--warm-white);
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
         }
 
         .category-card {
-            aspect-ratio: 1;
-            position: relative;
-            background-size: cover;
-            background-position: center bottom;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .category-card:nth-child(1) {
-            background-image: url('https://kiss951.com/uploads/2020/02/1043480972.jpg?format=auto&optimize=high&width=1440');
-        }
-
-        .category-card:nth-child(2) {
-            background-image: url('https://www.net-a-porter.com/variants/images/1647597321147293/ou/w2000_q60.jpg');
-        }
-
-        .category-card:nth-child(3) {
-            background-image: url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
-        }
-
-        .category-card:nth-child(4) {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHcy_qPzocIG4ByquLGS0R7OuXZC1mT0BGPPoI_QE_FfxBlzdxGdyEFwHgOldaXfm88BY&usqp=CAU');
-        }
-
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
-            transition: all 0.4s ease;
-        }
-
-        .category-card:hover .category-overlay {
-            background: linear-gradient(45deg, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
-        }
-
-        .category-content {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            right: 30px;
-            color: #fff;
-        }
-
-        .category-title {
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .category-brands {
-            font-size: 11px;
-            letter-spacing: 1px;
-            opacity: 0.9;
-            text-transform: uppercase;
-        }
-
-        /* Collections */
-        .collections {
-            padding: 100px 40px;
-        }
-
-        .collections-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            height: 60vh;
-            margin-bottom: 100px;
-        }
-
-        .collection-item {
+            aspect-ratio: 3/4;
             position: relative;
             background-size: cover;
             background-position: center;
             cursor: pointer;
+            transition: var(--transition-smooth);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
 
-        .collection-item:first-child {
-            background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-elegant);
         }
 
-        .collection-item:last-child {
-            background-image: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+        .category-card:nth-child(1) {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                              url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
         }
 
-        .collection-overlay {
+        .category-card:nth-child(2) {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                              url('https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+        }
+
+        .category-card:nth-child(3) {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                              url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+        }
+
+        .category-card:nth-child(4) {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1)), 
+                              url('https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+        }
+
+        .category-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 22, 20, 0.8), transparent 60%);
+            transition: var(--transition-smooth);
             display: flex;
             align-items: flex-end;
             padding: 40px;
         }
 
-        .collection-title {
-            color: #fff;
+        .category-card:hover .category-overlay {
+            background: linear-gradient(to top, rgba(201, 168, 118, 0.8), transparent 60%);
+        }
+
+        .category-content {
+            color: var(--warm-white);
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 400;
-            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .category-brands {
+            font-size: 12px;
             letter-spacing: 2px;
+            opacity: 0.9;
+            text-transform: uppercase;
         }
 
-        /* About */
-        .about {
-            padding: 100px 40px;
-            background: #fff;
+        /* ===== PROCESS SECTION ===== */
+        .process {
+            background: var(--grey-light);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .process-step {
             text-align: center;
+            padding: 50px 30px;
+            background: var(--warm-white);
+            border-radius: 4px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
         }
 
-        .about-content {
+        .process-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: translateX(-100%);
+            transition: var(--transition-smooth);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .process-step:hover::before {
+            transform: translateX(0);
+        }
+
+        .process-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--gold);
+            margin-bottom: 25px;
+            line-height: 1;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--primary-black);
+        }
+
+        .process-step p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--soft-black);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            background: var(--warm-white);
+        }
+
+        .about-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .about-card {
-            display: flex;
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
             align-items: center;
-            background: #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            max-width: 1000px;
-            margin: 0 auto;
         }
 
-        .about-card:hover {
-            transform: scale(1.02);
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--primary-black);
+        }
+
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: var(--soft-black);
+        }
+
+        .about-text .emphasis {
+            font-size: 20px;
+            color: var(--gold-dark);
+            font-weight: 400;
+            font-style: italic;
+            margin: 35px 0;
+            padding-left: 30px;
+            border-left: 3px solid var(--gold);
         }
 
         .about-image {
-            width: 50%;
-            height: 400px;
-            background-image: url('https://www.icon-icon.com/wp-content/uploads/2022/07/louboutin5-1.jpeg');
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, rgba(201, 168, 118, 0.1), rgba(201, 168, 118, 0.05)),
+                        url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
             background-size: cover;
             background-position: center;
+            border-radius: 4px;
+            box-shadow: var(--shadow-elegant);
+            position: relative;
         }
 
-        .about-text-container {
-            width: 50%;
-            padding: 40px;
-            text-align: left;
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(201, 168, 118, 0.3);
+            border-radius: 4px;
+            pointer-events: none;
         }
 
-        .about-title {
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background: var(--champagne);
+            text-align: center;
         }
 
-        .about-text {
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .about-cta {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .about-cta:hover {
-            background: #333;
-        }
-
-        /* Authentication */
-        .authentication {
-            padding: 100px 40px;
-            background: #fafafa;
-        }
-
-        .auth-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+        .contact-content {
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .auth-card {
-            text-align: center;
-            padding: 40px 20px;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin: 60px 0;
         }
 
-        .auth-number {
-            font-size: 48px;
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-
-        .auth-title {
+        .contact-item h4 {
             font-size: 14px;
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 15px;
+            color: var(--primary-black);
         }
 
-        /* Newsletter Signup */
-        .newsletter {
-            padding: 80px 40px;
-            background: #f5f5f5;
-            text-align: center;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-title {
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .newsletter-text {
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: 0.8;
-            margin-bottom: 30px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-input {
-            padding: 12px;
-            font-size: 14px;
-            border: 1px solid rgba(0,0,0,0.2);
-            border-radius: 4px;
-            width: 250px;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .newsletter-button {
-            padding: 12px 30px;
-            background: #000;
-            color: #fff;
-            border: none;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .newsletter-button:hover {
-            background: #333;
-        }
-
-        /* Social Links */
-        .social {
-            padding: 80px 40px;
-            background: #f5f5f5;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            padding: 12px 24px;
-            background: #000;
-            color: #fff;
+        .contact-item a {
+            color: var(--gold-dark);
             text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            font-size: 18px;
+            transition: var(--transition-quick);
         }
 
-        .social-link:hover {
-            background: #333;
+        .contact-item a:hover {
+            color: var(--primary-black);
         }
 
-        /* Contact */
-        .contact {
-            padding: 100px 40px;
-            text-align: center;
-        }
-
-        .contact-info {
+        .contact-cta {
             margin-top: 40px;
         }
 
-        .contact-info p {
-            font-size: 14px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .contact-info a {
-            color: #000;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            opacity: 0.6;
-        }
-
-        /* Footer */
+        /* ===== FOOTER ===== */
         .footer {
-            padding: 60px 40px 40px;
-            background: #1a1a1a;
-            color: #fff;
+            padding: 80px 60px 40px;
+            background: var(--primary-black);
+            color: var(--warm-white);
         }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
+        .footer-content {
+            max-width: 1400px;
             margin: 0 auto;
-            margin-bottom: 40px;
+            text-align: center;
         }
 
-        .footer-column h4 {
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .footer-brand {
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            filter: brightness(0) invert(1);
             margin-bottom: 20px;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--gold-light);
             opacity: 0.8;
         }
 
-        .footer-column ul {
-            list-style: none;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
         }
 
-        .footer-column li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column a {
-            color: #fff;
+        .footer-links a {
+            color: var(--warm-white);
             text-decoration: none;
             font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             opacity: 0.7;
+            transition: var(--transition-quick);
         }
 
-        .footer-column a:hover {
+        .footer-links a:hover {
             opacity: 1;
+            color: var(--gold-light);
         }
 
         .copyright {
-            text-align: center;
-            font-size: 11px;
+            font-size: 12px;
             opacity: 0.5;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            border-top: 1px solid rgba(201, 168, 118, 0.2);
         }
 
-        /* Mobile */
-        @media (max-width: 768px) {
+        /* ===== ANIMATIONS ===== */
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 20px 30px;
+            }
+
+            .navbar.scrolled {
+                padding: 15px 30px;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -564,135 +714,111 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: #fff;
+                background: var(--warm-white);
                 flex-direction: column;
                 justify-content: flex-start;
-                padding: 40px 20px;
-                gap: 30px;
-                transition: left 0.3s ease;
-                border-top: 1px solid rgba(0,0,0,0.1);
-                z-index: 999;
-                text-align: left;
-            }
-
-            .nav-menu li {
-                padding-left: 20px;
+                padding: 50px 30px;
+                gap: 40px;
+                transition: var(--transition-smooth);
+                box-shadow: var(--shadow-soft);
             }
 
             .nav-menu.active {
                 left: 0;
             }
 
+            .section {
+                padding: 80px 30px;
+            }
+
             .hero-title {
-                font-size: clamp(2.5rem, 10vw, 5rem);
+                font-size: clamp(3rem, 10vw, 6rem);
                 letter-spacing: 4px;
-                padding: 0 20px;
             }
-            
-            .hero-subtitle {
-                font-size: clamp(16px, 3.5vw, 20px);
-                letter-spacing: 2px;
-                padding: 0 20px;
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
             }
-            
-            .shipping-notice {
-                font-size: clamp(14px, 2.5vw, 16px);
-                letter-spacing: 1px;
-                padding: 0 20px;
-            }
-            
-            .collections-grid {
+
+            .expertise-grid,
+            .about-content {
                 grid-template-columns: 1fr;
-                height: auto;
+                gap: 60px;
             }
-            
-            .collection-item {
-                height: 300px;
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
             }
-            
-            .auth-grid {
+
+            .process-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
-            
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-links {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
             .navbar {
                 padding: 15px 20px;
             }
 
-            .categories-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 1px;
+            .section {
+                padding: 60px 20px;
+            }
+
+            .hero-title {
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                letter-spacing: 3px;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: clamp(2.5rem, 8vw, 3.5rem);
                 letter-spacing: 2px;
             }
 
-            .social-links {
-                gap: 15px;
+            .categories-grid {
+                grid-template-columns: 1fr;
             }
 
-            .social-link {
-                padding: 10px 20px;
-                font-size: 10px;
+            .footer {
+                padding: 60px 20px 30px;
             }
 
-            .about-card {
+            .footer-links {
+                gap: 20px;
                 flex-direction: column;
-            }
-
-            .about-image {
-                width: 100%;
-                height: 300px;
-            }
-
-            .about-text-container {
-                width: 100%;
-                padding: 30px 20px;
-                text-align: center;
-            }
-
-            .about-title {
-                font-size: 1.8rem;
-                letter-spacing: 2px;
-            }
-
-            .about-text {
-                font-size: 14px;
-                padding: 0 20px;
-            }
-
-            .newsletter-title {
-                font-size: 1.8rem;
-                letter-spacing: 2px;
-            }
-
-            .newsletter-text {
-                font-size: 14px;
-                padding: 0 20px;
-            }
-
-            .newsletter-input {
-                width: 100%;
-                max-width: 300px;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="logo" style="filter: brightness(0);">
-            <ul class="nav-menu">
+            <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="logo">
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#categories" class="nav-link">Collection</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#categories" class="nav-link">Categories</a></li>
-                <li><a href="#collections" class="nav-link">Collections</a></li>
-                <li><a href="#authentication" class="nav-link">Authentication</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -700,212 +826,220 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">AVANTELLE</h1>
-            <p class="hero-subtitle">Authenticated Luxury Resale</p>
-            <p class="shipping-notice">WORLDWIDE SHIPPING AVAILABLE</p>
-            <a href="#categories" class="hero-cta">Discover Collection</a>
+            <h1 class="hero-title serif">Avantelle</h1>
+            <p class="hero-subtitle sans">Masters of Luxury Restoration</p>
+            <p class="hero-tagline sans">Where iconic pieces find their second act of perfection</p>
+            
+            <div class="hero-cta-group">
+                <a href="#categories" class="hero-cta sans">Explore Collection</a>
+                <a href="#expertise" class="hero-cta secondary sans">Our Expertise</a>
+            </div>
         </div>
     </section>
 
-    <!-- Categories -->
-    <section class="categories" id="categories">
+    <!-- ===== EXPERTISE SECTION ===== -->
+    <section class="section expertise" id="expertise">
         <div class="container">
-            <h2 class="section-title">Categories</h2>
+            <h2 class="section-title serif">The Art of Revival</h2>
+            
+            <div class="expertise-grid">
+                <div class="expertise-content">
+                    <h3 class="serif">Luxury Restoration Specialists</h3>
+                    <p>At Avantelle, we don't simply resell luxury goods—we <span class="highlight">resurrect masterpieces</span>. Each Christian Louboutin sole, every Chanel clasp, and all Hermès hardware undergoes meticulous restoration by artisans who understand that luxury is not just about ownership, but about preservation.</p>
+                    
+                    <p>Our workshop is where damaged becomes divine, where worn becomes wonderful. We source only the finest pre-owned pieces, then apply techniques perfected over decades to restore them to <span class="highlight">museum-quality condition</span>.</p>
+                    
+                    <p>This is sustainable luxury at its finest—giving exceptional pieces a second life while maintaining the exacting standards of their original creators.</p>
+                </div>
+                
+                <div class="expertise-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES SECTION ===== -->
+    <section class="section categories" id="categories">
+        <div class="container">
+            <h2 class="section-title serif">Curated Collections</h2>
+            
             <div class="categories-grid">
                 <div class="category-card">
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
-                        <h3 class="category-title">Designer Shoes</h3>
-                        <p class="category-brands">Louboutin • Manolo • Jimmy Choo</p>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3 class="category-title serif">Christian Louboutin</h3>
+                            <p class="category-brands sans">The legendary red sole, restored to perfection</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="category-card">
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
-                        <h3 class="category-title">Handbags</h3>
-                        <p class="category-brands">Chanel • Hermès • Gucci • YSL</p>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3 class="category-title serif">Luxury Handbags</h3>
+                            <p class="category-brands sans">Chanel • Hermès • Gucci • Saint Laurent</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="category-card">
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
-                        <h3 class="category-title">Accessories</h3>
-                        <p class="category-brands">Scarves • Jewelry • Wallets</p>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3 class="category-title serif">Fine Accessories</h3>
+                            <p class="category-brands sans">Scarves • Jewelry • Small leather goods</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="category-card">
-                    <div class="category-overlay"></div>
-                    <div class="category-content">
-                        <h3 class="category-title">Vintage</h3>
-                        <p class="category-brands">Rare & Collectible Pieces</p>
+                    <div class="category-overlay">
+                        <div class="category-content">
+                            <h3 class="category-title serif">Vintage Rarities</h3>
+                            <p class="category-brands sans">Collectible pieces with provenance</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Collections -->
-    <section class="collections" id="collections">
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="section process" id="process">
         <div class="container">
-            <h2 class="section-title">Collections</h2>
-            <div class="collections-grid">
-                <div class="collection-item">
-                    <div class="collection-overlay">
-                        <div>
-                            <h3 class="collection-title">Christian Louboutin</h3>
-                            <p style="color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">Iconic Red Soles</p>
-                        </div>
-                    </div>
+            <h2 class="section-title serif">Our Process</h2>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-number serif">01</div>
+                    <h3 class="sans">Sourcing Excellence</h3>
+                    <p>We hand-select only authentic luxury pieces with restoration potential, sourcing from trusted networks across Europe.</p>
                 </div>
-                <div class="collection-item">
-                    <div class="collection-overlay">
-                        <div>
-                            <h3 class="collection-title">Luxury Handbags</h3>
-                            <p style="color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.9;">Chanel • Gucci • Hermès</p>
-                        </div>
-                    </div>
+                
+                <div class="process-step">
+                    <div class="process-number serif">02</div>
+                    <h3 class="sans">Authentication</h3>
+                    <p>Every piece undergoes rigorous authentication by certified experts using the latest verification techniques.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number serif">03</div>
+                    <h3 class="sans">Artisan Restoration</h3>
+                    <p>Our skilled craftspeople restore each piece using traditional techniques and premium materials to original specifications.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="process-number serif">04</div>
+                    <h3 class="sans">Final Curation</h3>
+                    <p>Only pieces that meet our exacting standards for beauty, authenticity, and condition join the Avantelle collection.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2 class="section-title">About Avantelle</h2>
-            <div class="about-card">
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="section about" id="about">
+        <div class="about-container">
+            <h2 class="section-title serif">The Avantelle Story</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="serif">Custodians of Craftsmanship</h3>
+                    <p>Founded in the heart of the United Kingdom, Avantelle began with a simple belief: that exceptional craftsmanship deserves preservation. We saw too many beautiful pieces languishing in wardrobes, their stories untold, their potential unrealized.</p>
+                    
+                    <div class="emphasis serif">
+                        "We don't just restore luxury goods—we restore their soul."
+                    </div>
+                    
+                    <p>Our founder, a former luxury retail specialist, recognized that the pre-owned market lacked the reverence these pieces deserved. Avantelle was born from the desire to create a bridge between sustainable fashion and uncompromising luxury standards.</p>
+                    
+                    <p>Every piece in our collection represents our commitment to excellence, authenticity, and the timeless art of luxury craftsmanship. We're not just sellers—we're custodians of fashion history.</p>
+                </div>
+                
                 <div class="about-image"></div>
-                <div class="about-text-container">
-                    <h3 class="about-title">Our Story</h3>
-                    <p class="about-text">
-                        Avantelle is your premier destination for authenticated luxury resale, based in the United Kingdom. We specialize in curating exclusive designer shoes, handbags, accessories, and vintage treasures, each meticulously verified by our expert team. Our passion for timeless elegance and sustainable luxury drives us to deliver unparalleled quality and authenticity. Join us as we redefine the art of luxury resale.
-                    </p>
-                    <a href="#contact" class="about-cta">Get in Touch</a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Authentication -->
-    <section class="authentication" id="authentication">
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="section contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Authentication</h2>
-            <p style="max-width: 600px; margin: 0 auto 60px; font-size: 16px; opacity: 0.8;">
-                Every item is carefully examined by certified experts who use industry-leading techniques to guarantee authenticity.
-            </p>
-            
-            <div class="auth-grid">
-                <div class="auth-card">
-                    <div class="auth-number">01</div>
-                    <h3 class="auth-title">Expert Verification</h3>
-                    <p style="font-size: 14px; line-height: 1.6;">Certified specialists examine every detail using industry-leading techniques.</p>
+            <div class="contact-content">
+                <h2 class="section-title serif">Begin Your Journey</h2>
+                <p style="font-size: 18px; margin-bottom: 40px; color: var(--soft-black);">
+                    Ready to discover your perfect piece? We're here to help you find luxury that tells your story.
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <h4 class="sans">Email Inquiries</h4>
+                        <a href="mailto:sales@avantelle.co.uk" class="serif">sales@avantelle.co.uk</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4 class="sans">Based In</h4>
+                        <p style="font-size: 16px; color: var(--soft-black);">United Kingdom</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <h4 class="sans">Worldwide Shipping</h4>
+                        <p style="font-size: 16px; color: var(--soft-black);">Luxury delivered globally</p>
+                    </div>
                 </div>
                 
-                <div class="auth-card">
-                    <div class="auth-number">02</div>
-                    <h3 class="auth-title">Lifetime Guarantee</h3>
-                    <p style="font-size: 14px; line-height: 1.6;">We stand behind our promise with a lifetime guarantee of authenticity.</p>
+                <div class="contact-cta">
+                    <a href="mailto:sales@avantelle.co.uk" class="hero-cta sans">Start a Conversation</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Links -->
-    <section class="social">
-        <div class="container">
-            <h2 class="section-title">Connect With Avantelle</h2>
-            <div class="social-links">
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">eBay Store</a>
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">Linktree</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:sales@avantelle.co.uk">sales@avantelle.co.uk</a></p>
-                <p><strong>Based in the United Kingdom</strong></p>
-            </div>
-            <div style="margin-top: 40px;">
-                <a href="mailto:sales@avantelle.co.uk" class="hero-cta">Inquire Now</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
-        <div class="newsletter-content">
-            <h2 class="newsletter-title">Stay in the Loop</h2>
-            <p class="newsletter-text">Subscribe to our newsletter for exclusive updates on new collections, luxury arrivals, and more.</p>
-            <form class="newsletter-form" onsubmit="return validateNewsletterForm()">
-                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                <button type="submit" class="newsletter-button">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Luxury Brands</h4>
-                <ul>
-                    <li><a href="#">Christian Louboutin Shoes</a></li>
-                    <li><a href="#">Pre-owned Chanel Handbags</a></li>
-                    <li><a href="#">Hermès Birkin Bags</a></li>
-                    <li><a href="#">Authenticated Luxury Goods</a></li>
-                </ul>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="footer-logo">
+                <p class="footer-tagline sans">Masters of Luxury Restoration</p>
             </div>
             
-            <div class="footer-column">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="#">Authentication Process</a></li>
-                    <li><a href="#">Worldwide Shipping</a></li>
-                    <li><a href="#">Luxury Consignment</a></li>
-                    <li><a href="#">Designer Resale</a></li>
-                </ul>
+            <div class="footer-links">
+                <a href="#expertise" class="sans">Expertise</a>
+                <a href="#categories" class="sans">Collection</a>
+                <a href="#process" class="sans">Process</a>
+                <a href="#about" class="sans">About</a>
+                <a href="#contact" class="sans">Contact</a>
+                <a href="mailto:sales@avantelle.co.uk" class="sans">Email</a>
             </div>
             
-            <div class="footer-column">
-                <h4>About</h4>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#authentication">Authentication</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                </ul>
+            <div class="copyright sans">
+                © 2024 Avantelle. Luxury restoration specialists based in the United Kingdom.
             </div>
-        </div>
-        
-        <div class="copyright">
-            © 2024 AVANTELLE. Authenticated luxury resale specialists based in the United Kingdom.
         </div>
     </footer>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-        // Mobile menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+        // ===== NAVIGATION SCROLL EFFECT =====
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
+        // ===== CLOSE MOBILE MENU ON LINK CLICK =====
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -913,28 +1047,66 @@
             });
         });
 
-        // Smooth scrolling
+        // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    const headerOffset = 100;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-        // Newsletter form validation
-        function validateNewsletterForm() {
-            const emailInput = document.querySelector('.newsletter-input');
-            if (!emailInput.value) {
-                alert('Please enter a valid email address.');
-                return false;
+        // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.process-step, .category-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // ===== PRELOAD CRITICAL IMAGES =====
+        window.addEventListener('load', () => {
+            // Add any critical images here for preloading if needed
+        });
+
+        // ===== HAMBURGER ANIMATION =====
+        hamburger.addEventListener('click', () => {
+            const spans = hamburger.querySelectorAll('span');
+            if (hamburger.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(7px, 7px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+            } else {
+                spans.forEach(span => {
+                    span.style.transform = 'none';
+                    span.style.opacity = '1';
+                });
             }
-            // Replace with actual form submission logic (e.g., Mailchimp integration)
-            alert('Thank you for subscribing!');
-            return false; // Prevent default form submission for now
-        }
+        });
     </script>
 </body>
 </html>
