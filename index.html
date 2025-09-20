@@ -142,48 +142,6 @@
             background: #333;
         }
 
-        /* About */
-        .about {
-            padding: 100px 40px;
-            background: #fff;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-title {
-            font-size: 3rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-
-        .about-text {
-            font-size: 16px;
-            line-height: 1.6;
-            opacity: 0.8;
-            margin-bottom: 40px;
-        }
-
-        .about-cta {
-            display: inline-block;
-            padding: 15px 40px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .about-cta:hover {
-            background: #333;
-        }
-
         /* Categories */
         .categories {
             padding: 100px 40px;
@@ -327,6 +285,78 @@
             letter-spacing: 2px;
         }
 
+        /* About */
+        .about {
+            padding: 100px 40px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-card {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-card:hover {
+            transform: scale(1.02);
+        }
+
+        .about-image {
+            width: 50%;
+            height: 400px;
+            background-image: url('https://www.icon-icon.com/wp-content/uploads/2022/07/louboutin5-1.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .about-text-container {
+            width: 50%;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .about-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-cta:hover {
+            background: #333;
+        }
+
         /* Authentication */
         .authentication {
             padding: 100px 40px;
@@ -358,6 +388,65 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 15px;
+        }
+
+        /* Newsletter Signup */
+        .newsletter {
+            padding: 80px 40px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-text {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-input {
+            padding: 12px;
+            font-size: 14px;
+            border: 1px solid rgba(0,0,0,0.2);
+            border-radius: 4px;
+            width: 250px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .newsletter-button {
+            padding: 12px 30px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .newsletter-button:hover {
+            background: #333;
         }
 
         /* Social Links */
@@ -549,14 +638,44 @@
                 font-size: 10px;
             }
 
+            .about-card {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .about-text-container {
+                width: 100%;
+                padding: 30px 20px;
+                text-align: center;
+            }
+
             .about-title {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 letter-spacing: 2px;
             }
 
             .about-text {
                 font-size: 14px;
                 padding: 0 20px;
+            }
+
+            .newsletter-title {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+
+            .newsletter-text {
+                font-size: 14px;
+                padding: 0 20px;
+            }
+
+            .newsletter-input {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -588,18 +707,6 @@
             <p class="hero-subtitle">Authenticated Luxury Resale</p>
             <p class="shipping-notice">WORLDWIDE SHIPPING AVAILABLE</p>
             <a href="#categories" class="hero-cta">Discover Collection</a>
-            <a href="#contact" class="hero-cta">Sign Up for Updates</a>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <h2 class="about-title">About Avantelle</h2>
-            <p class="about-text">
-                Avantelle is your trusted destination for authenticated luxury resale, specializing in exclusive designer shoes, handbags, accessories, and vintage treasures. Based in the United Kingdom, our expert team meticulously verifies every item to ensure unparalleled quality and authenticity. We are passionate about curating timeless pieces from iconic brands, offering a sustainable way to experience luxury. Stay tuned for our upcoming collections and join us in redefining elegance.
-            </p>
-            <a href="#contact" class="about-cta">Get in Touch</a>
         </div>
     </section>
 
@@ -668,6 +775,23 @@
         </div>
     </section>
 
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="section-title">About Avantelle</h2>
+            <div class="about-card">
+                <div class="about-image"></div>
+                <div class="about-text-container">
+                    <h3 class="about-title">Our Story</h3>
+                    <p class="about-text">
+                        Avantelle is your premier destination for authenticated luxury resale, based in the United Kingdom. We specialize in curating exclusive designer shoes, handbags, accessories, and vintage treasures, each meticulously verified by our expert team. Our passion for timeless elegance and sustainable luxury drives us to deliver unparalleled quality and authenticity. Join us as we redefine the art of luxury resale.
+                    </p>
+                    <a href="#contact" class="about-cta">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Authentication -->
     <section class="authentication" id="authentication">
         <div class="container">
@@ -716,6 +840,18 @@
             <div style="margin-top: 40px;">
                 <a href="mailto:sales@avantelle.co.uk" class="hero-cta">Inquire Now</a>
             </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2 class="newsletter-title">Stay in the Loop</h2>
+            <p class="newsletter-text">Subscribe to our newsletter for exclusive updates on new collections, luxury arrivals, and more.</p>
+            <form class="newsletter-form" onsubmit="return validateNewsletterForm()">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
         </div>
     </section>
 
@@ -787,6 +923,18 @@
                 }
             });
         });
+
+        // Newsletter form validation
+        function validateNewsletterForm() {
+            const emailInput = document.querySelector('.newsletter-input');
+            if (!emailInput.value) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            // Replace with actual form submission logic (e.g., Mailchimp integration)
+            alert('Thank you for subscribing!');
+            return false; // Prevent default form submission for now
+        }
     </script>
 </body>
 </html>
