@@ -103,7 +103,7 @@
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 6rem);
+            font-size: clamp(3rem, 8vw, 8rem);
             font-weight: 300;
             letter-spacing: 6px;
             text-transform: uppercase;
@@ -112,17 +112,17 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(14px, 3vw, 18px);
+            font-size: clamp(16px, 3.5vw, 20px);
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             opacity: 0.8;
         }
 
         .shipping-notice {
-            font-size: clamp(12px, 2vw, 14px);
+            font-size: clamp(14px, 2.5vw, 16px);
             letter-spacing: 1px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             opacity: 0.8;
         }
 
@@ -135,9 +135,52 @@
             font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
+            margin: 10px;
         }
 
         .hero-cta:hover {
+            background: #333;
+        }
+
+        /* About */
+        .about {
+            padding: 100px 40px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.6;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .about-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-cta:hover {
             background: #333;
         }
 
@@ -172,7 +215,7 @@
             aspect-ratio: 1;
             position: relative;
             background-size: cover;
-            background-position: center;
+            background-position: center bottom;
             overflow: hidden;
             cursor: pointer;
             transition: all 0.4s ease;
@@ -184,7 +227,7 @@
         }
 
         .category-card:nth-child(1) {
-            background-image: url('https://www.icon-icon.com/wp-content/uploads/2022/07/louboutin5-1.jpeg');
+            background-image: url('https://kiss951.com/uploads/2020/02/1043480972.jpg?format=auto&optimize=high&width=1440');
         }
 
         .category-card:nth-child(2) {
@@ -452,13 +495,20 @@
             }
 
             .hero-title {
-                font-size: clamp(2rem, 8vw, 4rem);
+                font-size: clamp(2.5rem, 10vw, 5rem);
                 letter-spacing: 4px;
                 padding: 0 20px;
             }
             
             .hero-subtitle {
+                font-size: clamp(16px, 3.5vw, 20px);
                 letter-spacing: 2px;
+                padding: 0 20px;
+            }
+            
+            .shipping-notice {
+                font-size: clamp(14px, 2.5vw, 16px);
+                letter-spacing: 1px;
                 padding: 0 20px;
             }
             
@@ -498,6 +548,16 @@
                 padding: 10px 20px;
                 font-size: 10px;
             }
+
+            .about-title {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .about-text {
+                font-size: 14px;
+                padding: 0 20px;
+            }
         }
     </style>
 </head>
@@ -507,6 +567,7 @@
         <div class="nav-container">
             <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="logo" style="filter: brightness(0);">
             <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#categories" class="nav-link">Categories</a></li>
                 <li><a href="#collections" class="nav-link">Collections</a></li>
                 <li><a href="#authentication" class="nav-link">Authentication</a></li>
@@ -527,6 +588,18 @@
             <p class="hero-subtitle">Authenticated Luxury Resale</p>
             <p class="shipping-notice">WORLDWIDE SHIPPING AVAILABLE</p>
             <a href="#categories" class="hero-cta">Discover Collection</a>
+            <a href="#contact" class="hero-cta">Sign Up for Updates</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 class="about-title">About Avantelle</h2>
+            <p class="about-text">
+                Avantelle is your trusted destination for authenticated luxury resale, specializing in exclusive designer shoes, handbags, accessories, and vintage treasures. Based in the United Kingdom, our expert team meticulously verifies every item to ensure unparalleled quality and authenticity. We are passionate about curating timeless pieces from iconic brands, offering a sustainable way to experience luxury. Stay tuned for our upcoming collections and join us in redefining elegance.
+            </p>
+            <a href="#contact" class="about-cta">Get in Touch</a>
         </div>
     </section>
 
@@ -672,6 +745,7 @@
             <div class="footer-column">
                 <h4>About</h4>
                 <ul>
+                    <li><a href="#about">About Us</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                     <li><a href="#authentication">Authentication</a></li>
                     <li><a href="#">Privacy Policy</a></li>
