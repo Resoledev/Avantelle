@@ -580,6 +580,194 @@
             pointer-events: none;
         }
 
+        /* ===== FEATURED MEDIA SECTION ===== */
+        .featured-media {
+            background: var(--grey-light);
+            text-align: center;
+        }
+
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .media-logo:hover img {
+            opacity: 1 !important;
+            transform: translateY(-2px);
+        }
+
+        /* ===== NEWSLETTER SECTION ===== */
+        .newsletter {
+            background: var(--champagne);
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form {
+            margin-top: 30px;
+        }
+
+        .newsletter-input-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: 2px solid rgba(201, 168, 118, 0.3);
+            border-radius: 4px;
+            background: var(--warm-white);
+            font-size: 14px;
+            color: var(--primary-black);
+            transition: var(--transition-quick);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 168, 118, 0.1);
+        }
+
+        .newsletter-button {
+            padding: 15px 30px;
+            background: var(--primary-black);
+            color: var(--warm-white);
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .newsletter-button:hover {
+            background: var(--gold);
+            color: var(--primary-black);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        /* ===== BLOG SECTION ===== */
+        .blog {
+            background: var(--warm-white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .blog-card {
+            background: var(--warm-white);
+            border-radius: 4px;
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-elegant);
+        }
+
+        .blog-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .blog-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(201, 168, 118, 0.1), transparent);
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .blog-category {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            font-weight: 500;
+        }
+
+        .blog-date {
+            font-size: 12px;
+            color: var(--grey-warm);
+        }
+
+        .blog-title {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--primary-black);
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--soft-black);
+            margin-bottom: 20px;
+        }
+
+        .blog-read-more {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition-quick);
+        }
+
+        .blog-read-more::after {
+            content: '→';
+            margin-left: 10px;
+            transition: var(--transition-quick);
+        }
+
+        .blog-read-more:hover {
+            color: var(--primary-black);
+        }
+
+        .blog-read-more:hover::after {
+            transform: translateX(5px);
+        }
         /* ===== CONTACT SECTION ===== */
         .contact {
             background: var(--champagne);
@@ -650,6 +838,45 @@
             letter-spacing: 2px;
             color: var(--gold-light);
             opacity: 0.8;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            text-align: left;
+        }
+
+        .footer-column h4 {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--warm-white);
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.7;
+            transition: var(--transition-quick);
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+            color: var(--gold-light);
         }
 
         .footer-links {
@@ -831,7 +1058,7 @@
         <div class="hero-content">
             <h1 class="hero-title serif">Avantelle</h1>
             <p class="hero-subtitle sans">Authenticated Luxury Resale</p>
-            <p class="hero-tagline sans">Where exceptional pieces find perfect new homes</p>
+            <p class="hero-tagline sans">Where exceptional pieces find their perfect new owner</p>
             
             <div class="hero-cta-group">
                 <a href="#categories" class="hero-cta sans">Discover Collection</a>
@@ -917,7 +1144,7 @@
                 
                 <div class="process-step">
                     <div class="process-number serif">02</div>
-                    <h3 class="sans">Authentication</h3>
+                    <h3 class="sans">Rigorous Authentication</h3>
                     <p>Every piece undergoes comprehensive authentication by certified experts using industry-leading verification techniques.</p>
                 </div>
                 
@@ -960,6 +1187,97 @@
         </div>
     </section>
 
+    <!-- ===== FEATURED MEDIA SECTION ===== -->
+    <section class="section featured-media">
+        <div class="container">
+            <h2 class="section-title serif">As Featured In</h2>
+            <div class="media-logos">
+                <div class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Forbes_logo.svg" alt="Forbes" style="height: 40px; opacity: 0.6; transition: var(--transition-quick);">
+                </div>
+                <div class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Vogue_logo.svg" alt="Vogue" style="height: 35px; opacity: 0.6; transition: var(--transition-quick);">
+                </div>
+                <div class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Financial_Times_logo.svg" alt="Financial Times" style="height: 30px; opacity: 0.6; transition: var(--transition-quick);">
+                </div>
+                <div class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Harper%27s_Bazaar_Logo.svg" alt="Harper's Bazaar" style="height: 25px; opacity: 0.6; transition: var(--transition-quick);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER SECTION ===== -->
+    <section class="section newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="section-title serif" style="margin-bottom: 40px;">Stay Connected</h2>
+                <p style="font-size: 18px; margin-bottom: 40px; color: var(--soft-black); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Be the first to discover exceptional pieces and receive exclusive updates from our curated collection.
+                </p>
+                
+                <form class="newsletter-form" onsubmit="return handleNewsletterSubmit(event)">
+                    <div class="newsletter-input-group">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-button sans">Subscribe</button>
+                    </div>
+                    <p style="font-size: 12px; color: var(--grey-warm); margin-top: 15px; opacity: 0.8;">
+                        We respect your privacy and will never share your information.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG SECTION ===== -->
+    <section class="section blog">
+        <div class="container">
+            <h2 class="section-title serif">Latest Insights</h2>
+            
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0b22d0e3d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category sans">Authentication Guide</span>
+                            <span class="blog-date sans">December 2024</span>
+                        </div>
+                        <h3 class="blog-title serif">How to Authenticate Christian Louboutin: Expert Tips</h3>
+                        <p class="blog-excerpt">Learn the key authentication points that our experts use to verify genuine Christian Louboutin pieces...</p>
+                        <a href="#" class="blog-read-more sans">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0b22d0e3d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category sans">Investment Guide</span>
+                            <span class="blog-date sans">November 2024</span>
+                        </div>
+                        <h3 class="blog-title serif">Luxury Handbags as Investment Pieces</h3>
+                        <p class="blog-excerpt">Discover which luxury handbags hold their value best and why pre-owned luxury is a smart investment...</p>
+                        <a href="#" class="blog-read-more sans">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://images.unsplash.com/photo-1594736797933-d0b22d0e3d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category sans">Care Guide</span>
+                            <span class="blog-date sans">October 2024</span>
+                        </div>
+                        <h3 class="blog-title serif">Caring for Your Luxury Pieces</h3>
+                        <p class="blog-excerpt">Professional tips for maintaining and preserving the beauty of your luxury handbags and shoes...</p>
+                        <a href="#" class="blog-read-more sans">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CONTACT SECTION ===== -->
     <section class="section contact" id="contact">
         <div class="container">
@@ -976,10 +1294,16 @@
                     </div>
                     
                     <div class="contact-item">
-                        <h4 class="sans">Shipping</h4>
-                        <p style="font-size: 16px; color: var(--soft-black);">Worldwide shipping available from the UK</p>
+                        <h4 class="sans">Based In</h4>
+                        <p style="font-size: 16px; color: var(--soft-black);">United Kingdom</p>
                     </div>
-    
+                    
+                    <div class="contact-item">
+                        <h4 class="sans">Shipping</h4>
+                        <p style="font-size: 16px; color: var(--soft-black);">Worldwide shipping available</p>
+                    </div>
+                </div>
+                
                 <div class="contact-cta">
                     <a href="mailto:sales@avantelle.co.uk" class="hero-cta sans">Start A Conversation</a>
                 </div>
@@ -995,6 +1319,52 @@
                 <p class="footer-tagline sans">Authenticated Luxury Resale</p>
             </div>
             
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="sans">Collections</h4>
+                    <ul>
+                        <li><a href="#categories" class="sans">Christian Louboutin</a></li>
+                        <li><a href="#categories" class="sans">Chanel Handbags</a></li>
+                        <li><a href="#categories" class="sans">Hermès Bags</a></li>
+                        <li><a href="#categories" class="sans">Luxury Accessories</a></li>
+                        <li><a href="#categories" class="sans">Vintage Pieces</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="sans">Services</h4>
+                    <ul>
+                        <li><a href="#process" class="sans">Authentication Process</a></li>
+                        <li><a href="#expertise" class="sans">Expert Curation</a></li>
+                        <li><a href="#contact" class="sans">Personal Styling</a></li>
+                        <li><a href="#contact" class="sans">Worldwide Shipping</a></li>
+                        <li><a href="#contact" class="sans">Consignment Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="sans">Company</h4>
+                    <ul>
+                        <li><a href="#about" class="sans">About Avantelle</a></li>
+                        <li><a href="#blog" class="sans">Blog & Insights</a></li>
+                        <li><a href="#contact" class="sans">Contact Us</a></li>
+                        <li><a href="#" class="sans">Privacy Policy</a></li>
+                        <li><a href="#" class="sans">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="sans">Connect</h4>
+                    <ul>
+                        <li><a href="mailto:sales@avantelle.co.uk" class="sans">Email Us</a></li>
+                        <li><a href="#" class="sans">Instagram</a></li>
+                        <li><a href="#" class="sans">Facebook</a></li>
+                        <li><a href="#newsletter" class="sans">Newsletter</a></li>
+                        <li><a href="#" class="sans">Customer Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+            
             <div class="footer-links">
                 <a href="#expertise" class="sans">Expertise</a>
                 <a href="#categories" class="sans">Collection</a>
@@ -1005,7 +1375,7 @@
             </div>
             
             <div class="copyright sans">
-                © 2024 Avantelle. Authenticated luxury resale specialists based in the United Kingdom.
+                © 2025 Avantelle. Authenticated luxury resale specialists based in the United Kingdom.
             </div>
         </div>
     </footer>
