@@ -580,25 +580,41 @@
             pointer-events: none;
         }
 
-        /* ===== FEATURED MEDIA SECTION ===== */
-        .featured-media {
-            background: var(--grey-light);
+        /* ===== FEATURED MEDIA BANNER ===== */
+        .featured-banner {
+            background: #1f1f1f;
+            padding: 20px 60px;
             text-align: center;
+        }
+
+        .featured-text {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--warm-white);
+            margin-bottom: 15px;
+            opacity: 0.8;
         }
 
         .media-logos {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 80px;
+            gap: 50px;
             flex-wrap: wrap;
-            max-width: 800px;
-            margin: 0 auto;
+        }
+
+        .media-logo img {
+            height: 25px;
+            filter: brightness(0) invert(1);
+            opacity: 0.7;
+            transition: var(--transition-quick);
         }
 
         .media-logo:hover img {
-            opacity: 1 !important;
-            transform: translateY(-2px);
+            opacity: 1;
+            transform: translateY(-1px);
         }
 
         /* ===== NEWSLETTER SECTION ===== */
@@ -988,6 +1004,32 @@
                 gap: 30px;
             }
 
+            .media-logos {
+                gap: 60px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .newsletter-input-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-input {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                text-align: center;
+            }
+
             .footer-links {
                 gap: 30px;
             }
@@ -1021,6 +1063,12 @@
 
             .footer {
                 padding: 60px 20px 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
             }
 
             .footer-links {
@@ -1187,22 +1235,22 @@
         </div>
     </section>
 
-    <!-- ===== FEATURED MEDIA SECTION ===== -->
-    <section class="section featured-media">
+    <!-- ===== FEATURED MEDIA BANNER ===== -->
+    <section class="featured-banner">
         <div class="container">
-            <h2 class="section-title serif">As Featured In</h2>
+            <p class="featured-text sans">As Featured In</p>
             <div class="media-logos">
                 <div class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Forbes_logo.svg" alt="Forbes" style="height: 40px; opacity: 0.6; transition: var(--transition-quick);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Forbes_logo.svg" alt="Forbes">
                 </div>
                 <div class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Vogue_logo.svg" alt="Vogue" style="height: 35px; opacity: 0.6; transition: var(--transition-quick);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Vogue_logo.svg" alt="Vogue">
                 </div>
                 <div class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Financial_Times_logo.svg" alt="Financial Times" style="height: 30px; opacity: 0.6; transition: var(--transition-quick);">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Financial_Times_logo.svg" alt="Financial Times">
                 </div>
                 <div class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Harper%27s_Bazaar_Logo.svg" alt="Harper's Bazaar" style="height: 25px; opacity: 0.6; transition: var(--transition-quick);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Harper%27s_Bazaar_Logo.svg" alt="Harper's Bazaar">
                 </div>
             </div>
         </div>
@@ -1286,23 +1334,6 @@
                 <p style="font-size: 18px; margin-bottom: 40px; color: var(--soft-black);">
                     Ready to discover your perfect piece? We're here to help you find luxury that tells your story.
                 </p>
-                
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <h4 class="sans">Contact Us</h4>
-                        <a href="mailto:sales@avantelle.co.uk" class="serif">sales@avantelle.co.uk</a>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <h4 class="sans">Based In</h4>
-                        <p style="font-size: 16px; color: var(--soft-black);">United Kingdom</p>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <h4 class="sans">Shipping</h4>
-                        <p style="font-size: 16px; color: var(--soft-black);">Worldwide shipping available</p>
-                    </div>
-                </div>
                 
                 <div class="contact-cta">
                     <a href="mailto:sales@avantelle.co.uk" class="hero-cta sans">Start A Conversation</a>
@@ -1455,7 +1486,23 @@
             // Add any critical images here for preloading if needed
         });
 
-        // ===== HAMBURGER ANIMATION =====
+        // ===== NEWSLETTER FORM HANDLING =====
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('.newsletter-input').value;
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            
+            // Here you would normally send to your email service
+            alert('Thank you for subscribing! We\'ll be in touch soon.');
+            event.target.querySelector('.newsletter-input').value = '';
+            return false;
+        }
         hamburger.addEventListener('click', () => {
             const spans = hamburger.querySelectorAll('span');
             if (hamburger.classList.contains('active')) {
