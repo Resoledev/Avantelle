@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection | Avantelle - Authenticated Luxury Pieces</title>
+    <meta name="description" content="Browse our curated collection of authenticated pre-owned luxury handbags, shoes, and accessories from Chanel, Hermès, Louboutin & more.">
+
+```
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/collection.css">
+```
+
+</head>
+
+<body class="page-collection">
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="logo"></a>
+
+```
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html#expertise" class="nav-link">Expertise</a></li>
+            <li><a href="collection.html" class="nav-link">Collection</a></li>
+            <li><a href="authentication.html" class="nav-link">Authentication</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== COLLECTION HERO ===== -->
+<section class="collection-hero">
+    <div class="collection-hero-content">
+        <h1 class="collection-title serif">Our Collection</h1>
+        <p class="collection-subtitle sans">Authenticated luxury pieces, curated with expertise</p>
+    </div>
+</section>
+
+<!-- ===== COLLECTION MAIN ===== -->
+<section class="collection-main">
+    <div class="container">
+        <div class="collection-layout">
+            
+            <!-- ===== SIDEBAR FILTERS ===== -->
+            <aside class="collection-sidebar">
+                <div class="filter-section">
+                    <h3 class="filter-title sans">Filters</h3>
+                    <button class="filter-clear sans" id="clearFilters">Clear All</button>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title sans">Category</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="handbags" class="filter-checkbox">
+                            <span class="filter-label sans">Handbags</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="shoes" class="filter-checkbox">
+                            <span class="filter-label sans">Shoes</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="accessories" class="filter-checkbox">
+                            <span class="filter-label sans">Accessories</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title sans">Brand</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="Chanel" class="filter-checkbox">
+                            <span class="filter-label sans">Chanel</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="Hermès" class="filter-checkbox">
+                            <span class="filter-label sans">Hermès</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="Christian Louboutin" class="filter-checkbox">
+                            <span class="filter-label sans">Christian Louboutin</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="Gucci" class="filter-checkbox">
+                            <span class="filter-label sans">Gucci</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="brand" value="Louis Vuitton" class="filter-checkbox">
+                            <span class="filter-label sans">Louis Vuitton</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Condition Filter -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title sans">Condition</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="condition" value="Excellent" class="filter-checkbox">
+                            <span class="filter-label sans">Excellent</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="condition" value="Very Good" class="filter-checkbox">
+                            <span class="filter-label sans">Very Good</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="condition" value="Good" class="filter-checkbox">
+                            <span class="filter-label sans">Good</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <h4 class="filter-group-title sans">Price Range</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="0-1000" class="filter-checkbox">
+                            <span class="filter-label sans">Under £1,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="1000-3000" class="filter-checkbox">
+                            <span class="filter-label sans">£1,000 - £3,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="3000-5000" class="filter-checkbox">
+                            <span class="filter-label sans">£3,000 - £5,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="5000-10000" class="filter-checkbox">
+                            <span class="filter-label sans">£5,000 - £10,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="10000-999999" class="filter-checkbox">
+                            <span class="filter-label sans">Over £10,000</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- ===== PRODUCTS AREA ===== -->
+            <div class="collection-content">
+                
+                <!-- Toolbar -->
+                <div class="collection-toolbar">
+                    <div class="collection-count sans">
+                        <span id="productCount">Loading...</span>
+                    </div>
+                    
+                    <div class="collection-sort">
+                        <label for="sortSelect" class="sort-label sans">Sort by:</label>
+                        <select id="sortSelect" class="sort-select sans">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest</option>
+                            <option value="brand">Brand A-Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically loaded here by JavaScript -->
+                    <div class="loading-message sans">Loading collection...</div>
+                </div>
+
+                <!-- No Results Message -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <p class="no-results-title serif">No items found</p>
+                    <p class="no-results-text sans">Try adjusting your filters to see more products</p>
+                    <button class="hero-cta sans" id="resetFilters">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <img src="https://i.ibb.co/b5K0b8SX/avantelle-white-1000px.png" alt="AVANTELLE" class="footer-logo">
+            <p class="footer-tagline sans">Authenticated Luxury Resale</p>
+        </div>
+        
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4 class="sans">Collections</h4>
+                <ul>
+                    <li><a href="collection.html?category=louboutin" class="sans">Christian Louboutin</a></li>
+                    <li><a href="collection.html?category=handbags" class="sans">Chanel Handbags</a></li>
+                    <li><a href="collection.html?category=handbags" class="sans">Hermès Bags</a></li>
+                    <li><a href="collection.html?category=accessories" class="sans">Luxury Accessories</a></li>
+                    <li><a href="collection.html?category=vintage" class="sans">Vintage Pieces</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="sans">Services</h4>
+                <ul>
+                    <li><a href="authentication.html" class="sans">Authentication Process</a></li>
+                    <li><a href="index.html#expertise" class="sans">Expert Curation</a></li>
+                    <li><a href="index.html#contact" class="sans">Personal Styling</a></li>
+                    <li><a href="index.html#contact" class="sans">Worldwide Shipping</a></li>
+                    <li><a href="index.html#contact" class="sans">Consignment Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="sans">Company</h4>
+                <ul>
+                    <li><a href="index.html#about" class="sans">About Avantelle</a></li>
+                    <li><a href="index.html#blog" class="sans">Blog & Insights</a></li>
+                    <li><a href="index.html#contact" class="sans">Contact Us</a></li>
+                    <li><a href="#" class="sans">Privacy Policy</a></li>
+                    <li><a href="#" class="sans">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="sans">Connect</h4>
+                <ul>
+                    <li><a href="mailto:sales@avantelle.co.uk" class="sans">Email Us</a></li>
+                    <li><a href="#" class="sans">Instagram</a></li>
+                    <li><a href="#" class="sans">Facebook</a></li>
+                    <li><a href="#" class="sans">Customer Reviews</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <a href="index.html#expertise" class="sans">Expertise</a>
+            <a href="collection.html" class="sans">Collection</a>
+            <a href="authentication.html" class="sans">Authentication</a>
+            <a href="index.html#about" class="sans">About</a>
+            <a href="index.html#contact" class="sans">Contact</a>
+            <a href="mailto:sales@avantelle.co.uk" class="sans">Email</a>
+        </div>
+        
+        <div class="copyright sans">
+            © 2025 Avantelle. Authenticated luxury resale specialists based in the United Kingdom.
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/collection.js"></script>
+```
+
+</body>
+</html>
