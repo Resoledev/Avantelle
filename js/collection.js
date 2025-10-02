@@ -59,7 +59,7 @@ function displayProducts(products) {
     noResults.style.display = 'none';
     
     productsGrid.innerHTML = products.map(product => `
-        <div class="product-card" data-product-id="${product.id}">
+        <a href="product-detail.html?id=${product.id}" class="product-card" style="text-decoration: none; color: inherit;">
             <div class="product-image-wrapper">
                 <img src="${product.image}" alt="${product.name}" class="product-image" loading="lazy">
                 ${product.featured ? '<span class="product-badge sans">Featured</span>' : ''}
@@ -69,9 +69,8 @@ function displayProducts(products) {
                 <h3 class="product-name">${product.name}</h3>
                 <span class="product-condition sans">Condition: ${product.condition}</span>
                 <span class="product-price">£${product.price.toLocaleString()}</span>
-                <a href="mailto:sales@avantelle.co.uk?subject=Inquiry about ${product.brand} ${product.name}" class="product-cta sans">Inquire</a>
             </div>
-        </div>
+        </a>
     `).join('');
 }
 
