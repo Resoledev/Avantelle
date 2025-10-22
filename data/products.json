@@ -1,69 +1,159 @@
 [
   {
     "id": 1,
-    "name": "Classic Flap Medium",
-    "brand": "Chanel",
-    "category": "handbags",
-    "price": 4850,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": true,
-    "dateAdded": "2025-09-15"
-  },
-  {
-    "id": 2,
-    "name": "Birkin 30 Togo Leather",
-    "brand": "Hermès",
-    "category": "handbags",
-    "price": 12500,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": true,
-    "dateAdded": "2025-09-20"
-  },
-  {
-    "id": 3,
     "name": "So Kate 120mm Black Patent",
     "brand": "Christian Louboutin",
     "category": "shoes",
     "price": 485,
-    "condition": "Very Good",
-    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "condition": "Good",
+    "image": "https://i.ebayimg.com/images/g/fygAAeSwjmBo98lm/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/fygAAeSwjmBo98lm/s-l1600.webp",
+      "https://i.ebayimg.com/images/g/8JYAAeSwKe1o98lr/s-l1600.webp",
+      "https://i.ebayimg.com/images/g/kKIAAeSw1GJo98ls/s-l1600.webp",
+      "https://i.ebayimg.com/images/g/4AQAAeSwOBpo98lq/s-l1600.webp",
+      "https://i.ebayimg.com/images/g/c4QAAeSws1Bo98lr/s-l1600.webp",
+      "https://i.ebayimg.com/images/g/2UMAAeSwYzpo98ls/s-l1600.webp"
+    ],
+    "featured": true,
+    "dateAdded": "2025-10-15",
+    "description": "The most iconic silhouette. 100% authentic Christian Louboutin So Kate in black patent leather. Comes with original box, dust bags and spare heel tips included. RRP £695. EU 38 / UK 5.",
+    "specifications": {
+      "ukSize": "5",
+      "euSize": "38",
+      "heelHeight": "Very High (Over 10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Pointed Toe",
+      "upperMaterial": "Patent Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Fifi 100mm Black Leather",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 465,
+    "condition": "Excellent",
+    "image": "https://i.ebayimg.com/images/g/6loAAeSw2RJo98s2/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/6loAAeSw2RJo98s2/s-l1600.webp"
+    ],
+    "featured": true,
+    "dateAdded": "2025-10-16",
+    "description": "Authentic Christian Louboutin Fifi pumps in excellent condition. Classic round toe silhouette in black leather with iconic red sole. EU 39 / UK 6.",
+    "specifications": {
+      "ukSize": "6",
+      "euSize": "39",
+      "heelHeight": "High (7.6-10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Round Toe",
+      "upperMaterial": "Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Pigalle 100mm Black Patent",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 445,
+    "condition": "Excellent",
+    "image": "https://i.ebayimg.com/images/g/vSgAAeSwTKNo9Qjy/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/vSgAAeSwTKNo9Qjy/s-l1600.webp"
+    ],
     "featured": false,
-    "dateAdded": "2025-09-10"
+    "dateAdded": "2025-10-17",
+    "description": "Authentic Christian Louboutin Pigalle pumps in excellent condition. Timeless court shoe style in black patent leather. EU 36 / UK 3.",
+    "specifications": {
+      "ukSize": "3",
+      "euSize": "36",
+      "heelHeight": "High (7.6-10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Pointed Toe",
+      "upperMaterial": "Patent Leather",
+      "outsole": "Patent Leather",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 4,
-    "name": "GG Marmont Small Matelassé",
-    "brand": "Gucci",
-    "category": "handbags",
-    "price": 1250,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "name": "Prive 120mm Black Platform",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 425,
+    "condition": "Good",
+    "image": "https://i.ebayimg.com/images/g/L~8AAeSwjK9o98x~/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/L~8AAeSwjK9o98x~/s-l1600.webp"
+    ],
     "featured": false,
-    "dateAdded": "2025-09-12"
+    "dateAdded": "2025-10-18",
+    "description": "Authentic Christian Louboutin Prive open-toe platform pumps in good condition. Statement piece in black leather with signature red sole. EU 37.5 / UK 4.5.",
+    "specifications": {
+      "ukSize": "4.5",
+      "euSize": "37.5",
+      "heelHeight": "Very High (Over 10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Open Toe",
+      "upperMaterial": "Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 5,
-    "name": "Neverfull MM Monogram",
-    "brand": "Louis Vuitton",
-    "category": "handbags",
-    "price": 1450,
-    "condition": "Very Good",
-    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "name": "Ankle Boots Black Suede",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 595,
+    "condition": "Good",
+    "image": "https://i.ebayimg.com/images/g/ip8AAeSwShxo982w/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/ip8AAeSwShxo982w/s-l1600.webp"
+    ],
     "featured": false,
-    "dateAdded": "2025-09-08"
+    "dateAdded": "2025-10-19",
+    "description": "Authentic Christian Louboutin ankle booties in black suede. Perfect for winter styling with stiletto heel. EU 39.5 / UK 6.5.",
+    "specifications": {
+      "ukSize": "6.5",
+      "euSize": "39.5",
+      "heelHeight": "High (7.6-10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Round Toe",
+      "upperMaterial": "Suede",
+      "outsole": "Suede",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 6,
-    "name": "Boy Bag Medium Caviar",
-    "brand": "Chanel",
-    "category": "handbags",
-    "price": 3950,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "name": "Ankle Booties Black Leather",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 625,
+    "condition": "Good",
+    "image": "https://i.ebayimg.com/images/g/z5oAAeSwXlBo9sAq/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/z5oAAeSwXlBo9sAq/s-l1600.webp"
+    ],
     "featured": false,
-    "dateAdded": "2025-09-18"
+    "dateAdded": "2025-10-20",
+    "description": "Authentic Christian Louboutin ankle booties in luxurious black leather. Very high stiletto heel for dramatic impact. Perfect for casual or evening wear. EU 39.5 / UK 6.5.",
+    "specifications": {
+      "ukSize": "6.5",
+      "euSize": "39.5",
+      "heelHeight": "Very High (Over 10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Round Toe",
+      "upperMaterial": "Leather",
+      "outsole": "Leather",
+      "lining": "Leather",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 7,
