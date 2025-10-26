@@ -4,7 +4,7 @@
     "name": "So Kate 120mm Black Patent",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 485,
+    "price": 175,
     "condition": "Good",
     "image": "https://i.ebayimg.com/images/g/fygAAeSwjmBo98lm/s-l1600.webp",
     "images": [
@@ -34,7 +34,7 @@
     "name": "Fifi 100mm Black Leather",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 465,
+    "price": 125,
     "condition": "Excellent",
     "image": "https://i.ebayimg.com/images/g/6loAAeSw2RJo98s2/s-l1600.webp",
     "images": [
@@ -59,7 +59,7 @@
     "name": "Pigalle 100mm Black Patent",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 445,
+    "price": 165,
     "condition": "Excellent",
     "image": "https://i.ebayimg.com/images/g/vSgAAeSwTKNo9Qjy/s-l1600.webp",
     "images": [
@@ -84,7 +84,7 @@
     "name": "Prive 120mm Black Platform",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 425,
+    "price": 125,
     "condition": "Good",
     "image": "https://i.ebayimg.com/images/g/L~8AAeSwjK9o98x~/s-l1600.webp",
     "images": [
@@ -109,7 +109,7 @@
     "name": "Ankle Boots Black Suede",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 595,
+    "price": 195,
     "condition": "Good",
     "image": "https://i.ebayimg.com/images/g/ip8AAeSwShxo982w/s-l1600.webp",
     "images": [
@@ -134,7 +134,7 @@
     "name": "Ankle Booties Black Leather",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 625,
+    "price": 295,
     "condition": "Good",
     "image": "https://i.ebayimg.com/images/g/z5oAAeSwXlBo9sAq/s-l1600.webp",
     "images": [
@@ -157,101 +157,77 @@
   },
   {
     "id": 7,
-    "name": "Pigalle Follies 100mm Nude",
+    "name": "Very Prive 120mm Patent Bone",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 565,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "price": 115,
+    "condition": "Very Good",
+    "image": "https://i.ebayimg.com/images/g/oDgAAeSwiwto~QyL/s-l1600.webp",
+    "images": [
+      "https://i.ebayimg.com/images/g/oDgAAeSwiwto~QyL/s-l1600.webp"
+    ],
     "featured": false,
-    "dateAdded": "2025-09-14"
+    "dateAdded": "2025-10-21",
+    "description": "These are absolutely gorgeous! 100% authentic Christian Louboutin Very Prive in bone patent leather. Preloved in really great condition besides some pulling on the heel. Box and dust bags included. Bone colourway - between white and nude. EU 37.5 / UK 4.5.",
+    "specifications": {
+      "ukSize": "4.5",
+      "euSize": "37.5",
+      "heelHeight": "Very High (Over 10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Peep Toe",
+      "upperMaterial": "Patent Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 8,
-    "name": "Kelly 28 Epsom Leather",
-    "brand": "Hermès",
-    "category": "handbags",
-    "price": 9800,
+    "name": "Kate 85mm Black Leather",
+    "brand": "Christian Louboutin",
+    "category": "shoes",
+    "price": 195,
     "condition": "Very Good",
-    "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": true,
-    "dateAdded": "2025-09-22"
+    "image": "https://images1.vinted.net/t/05_01b11_KRbP7tV2WYMLFKz9AejqoTnS/f800/1761412080.webp?s=65253de364a2894928b03c44c765dd12d28d8d99",
+    "images": [
+      "https://images1.vinted.net/t/05_01b11_KRbP7tV2WYMLFKz9AejqoTnS/f800/1761412080.webp?s=65253de364a2894928b03c44c765dd12d28d8d99"
+    ],
+    "featured": false,
+    "dateAdded": "2025-10-22",
+    "description": "100% authentic Christian Louboutin Kate 85mm in black leather. Amazing condition, just wear on the soles. Shipped with white dust bag. EU 40 / UK 7.",
+    "specifications": {
+      "ukSize": "7",
+      "euSize": "40",
+      "heelHeight": "High (7.6-10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Pointed Toe",
+      "upperMaterial": "Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
   },
   {
     "id": 9,
-    "name": "Dionysus Small GG Supreme",
-    "brand": "Gucci",
-    "category": "handbags",
-    "price": 1650,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-16"
-  },
-  {
-    "id": 10,
-    "name": "Cashmere Silk Scarf",
-    "brand": "Hermès",
-    "category": "accessories",
-    "price": 385,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-05"
-  },
-  {
-    "id": 11,
-    "name": "2.55 Reissue Medium",
-    "brand": "Chanel",
-    "category": "handbags",
-    "price": 5200,
-    "condition": "Very Good",
-    "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-11"
-  },
-  {
-    "id": 12,
-    "name": "Iriza 100mm Leather",
+    "name": "Pigalle 100mm Patent Nude",
     "brand": "Christian Louboutin",
     "category": "shoes",
-    "price": 495,
-    "condition": "Good",
-    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-07"
-  },
-  {
-    "id": 13,
-    "name": "Speedy 30 Damier Ebene",
-    "brand": "Louis Vuitton",
-    "category": "handbags",
-    "price": 850,
-    "condition": "Very Good",
-    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-13"
-  },
-  {
-    "id": 14,
-    "name": "Constance 24 Box Leather",
-    "brand": "Hermès",
-    "category": "handbags",
-    "price": 8500,
+    "price": 165,
     "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-19"
-  },
-  {
-    "id": 15,
-    "name": "Marmont Matelassé Belt Bag",
-    "brand": "Gucci",
-    "category": "accessories",
-    "price": 980,
-    "condition": "Excellent",
-    "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "featured": false,
-    "dateAdded": "2025-09-09"
+    "image": "https://images1.vinted.net/t/04_01733_zDCvqcPyZ6LF6Gd1D3a8oDTV/f800/1761391524.webp?s=533e55e8c0fd35b8cee9fddf4cbb5f9dc23e9168",
+    "images": [
+      "https://images1.vinted.net/t/04_01733_zDCvqcPyZ6LF6Gd1D3a8oDTV/f800/1761391524.webp?s=533e55e8c0fd35b8cee9fddf4cbb5f9dc23e9168"
+    ],
+    "featured": true,
+    "dateAdded": "2025-10-23",
+    "description": "A staple for your wardrobe! 100% authentic Christian Louboutin Pigalle in nude patent leather. Amazing condition, worn less than 5 times. Box and dust bags included. EU 41 / UK 7.",
+    "specifications": {
+      "ukSize": "7",
+      "euSize": "41",
+      "heelHeight": "High (7.6-10cm)",
+      "heelStyle": "Stiletto",
+      "toeShape": "Pointed Toe",
+      "upperMaterial": "Patent Leather",
+      "outsole": "Leather",
+      "madeIn": "Italy"
+    }
   }
 ]
